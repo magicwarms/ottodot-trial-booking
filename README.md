@@ -11,6 +11,11 @@ same instant.
 
 ---
 
+## Explanation Videos
+I split into 2 videos, because of limited video duration on Loom
+- https://www.loom.com/share/1feb892f30fa44e3935b28ecee5114a7 (part 1)
+- https://www.loom.com/share/5968c811b4d54f1eabb356ebc3bfaa37 (part 2)
+
 ## How to run
 
 Requires Node 20 or newer.
