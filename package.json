@@ -1,0 +1,28 @@
+{
+  "name": "ottodot-trial-booking",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "tsx db/seed.ts",
+    "test": "node --import tsx --test test/*.test.ts",
+    "verify": "tsx db/verify.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "next": "^15.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}

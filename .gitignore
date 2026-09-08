@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Local SQLite database (recreate with `npm run seed`)
+*.db
+*.db-shm
+*.db-wal
+
+# The assignment brief is Ottodot's document, not ours to republish.
+*.pdf
+
+.env*
+.DS_Store

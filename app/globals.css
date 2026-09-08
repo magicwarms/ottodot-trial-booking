@@ -1,0 +1,66 @@
+:root {
+  --line: #d8d8d2;
+  --muted: #6b6b66;
+  --ink: #1a1a18;
+  --ok: #1c6b3f;
+  --bad: #a3301f;
+  --warn: #8a6100;
+  --bg: #fbfbf9;
+  --panel: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main { max-width: 880px; margin: 0 auto; padding: 32px 20px 72px; }
+
+nav { display: flex; gap: 18px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 13px;
+        text-transform: uppercase; letter-spacing: .05em; }
+nav a:hover { color: var(--ink); }
+
+h1 { font-size: 22px; margin: 28px 0 4px; }
+h2 { font-size: 15px; margin: 32px 0 10px; text-transform: uppercase;
+     letter-spacing: .06em; color: var(--muted); }
+p.sub { margin: 0 0 24px; color: var(--muted); }
+
+section.panel { border: 1px solid var(--line); background: var(--panel);
+                border-radius: 8px; padding: 18px; margin-bottom: 16px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .05em;
+     color: var(--muted); padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line); }
+td { padding: 8px 10px 8px 0; border-bottom: 1px solid #efefea; vertical-align: middle; }
+tr:last-child td { border-bottom: 0; }
+
+label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .05em;
+        color: var(--muted); margin-bottom: 6px; }
+select, button {
+  font: inherit; padding: 8px 12px; border-radius: 6px; border: 1px solid var(--line);
+  background: #fff; color: inherit;
+}
+button { cursor: pointer; font-weight: 600; }
+button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+.row { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.seats { font-variant-numeric: tabular-nums; }
+
+.badge { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 12px;
+         font-weight: 700; letter-spacing: .03em; border: 1px solid currentColor; }
+.badge.confirmed { color: var(--ok); }
+.badge.pending_payment { color: var(--warn); }
+.badge.payment_failed, .badge.cancelled_seat_taken, .badge.cancelled { color: var(--bad); }
+
+.notice { border-radius: 6px; padding: 10px 14px; margin-bottom: 16px; font-size: 14px;
+          border: 1px solid var(--bad); color: var(--bad); background: #fdf3f1; }
+
+.full { color: var(--bad); font-weight: 600; }
+code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: #f2f2ec;
+       padding: 1px 5px; border-radius: 4px; }
