@@ -63,7 +63,11 @@ Class #2 has 1 seat left. Book **Arjun** into it, stop at the payment page.
 > "Arjun is User A. He's on the payment page looking at the last seat. He holds
 > nothing."
 
-Switch to the terminal, run the snippet from the README §Demo path step 3.
+Switch to the terminal and run:
+
+```bash
+npm run take-seat
+```
 
 > "That's User B. Different process, own database connection. B just paid and
 > took the last seat. The class is now full."

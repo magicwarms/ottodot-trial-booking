@@ -2,12 +2,15 @@
   "name": "ottodot-trial-booking",
   "version": "1.0.0",
   "private": true,
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "seed": "tsx db/seed.ts",
+    "take-seat": "tsx db/take-seat.ts",
     "test": "node --import tsx --test test/*.test.ts",
     "verify": "tsx db/verify.ts"
   },

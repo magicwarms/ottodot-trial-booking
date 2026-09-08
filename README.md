@@ -33,8 +33,9 @@ Then:
 Two extra commands:
 
 ```bash
-npm run verify   # asserts the invariants directly against the database file
-npm run build    # production build
+npm run verify     # asserts the invariants directly against the database file
+npm run take-seat  # demo helper: another parent takes a seat (see below)
+npm run build      # production build
 ```
 
 > **If `npm install` warns about blocked install scripts** (npm 11+ blocks them
@@ -47,9 +48,19 @@ npm run build    # production build
 1. `npm run seed`. Class **#2 Math / Mr Chen has exactly 3 of 4 seats taken.**
 2. Open `/`, choose **Arjun Nair**, choose **Math / Mr Chen**, continue. The
    booking is `pending_payment` and explicitly **holds no seat**.
-3. In another terminal, let someone else take that last seat:
+3. In another terminal, let a different parent take that last seat:
    ```bash
-   npx tsx -e "import {connect,DB_FILE} from './lib/db';import {createBooking,payBooking} from './lib/booking';const db=connect(DB_FILE);const c=createBooking(db,{studentId:2,classId:2});c.ok&&console.log(payBooking(db,{bookingId:c.value.id,simulate:'success'}))"
+   npm run take-seat
+   ```
+   It picks an eligible child, books, and pays — from a separate process with
+   its own database connection. Output:
+   ```
+   Class #2 — Math with Mr Chen
+     before: 3/4 confirmed, 1 seat(s) left
+     Rafi Rahayu paid and took seat 4 (booking #10)
+     after:  4/4 confirmed, 0 seat(s) left
+
+   The class is now FULL. Go press Pay in the browser — that payment must not confirm.
    ```
 4. Back in the browser, press **Pay**. The result is `cancelled_seat_taken`,
    with a `succeeded` charge followed by a `refunded` entry. Arjun is **not** on
@@ -86,6 +97,7 @@ lib/db.ts                 connection + PRAGMAs
 db/schema.sql             tables, CHECKs, partial unique indexes
 db/seed.ts                synthetic data covering the required edge cases
 db/verify.ts              invariant assertions against a live database
+db/take-seat.ts           demo helper for the last-seat race
 test/                     invariants, last-seat scenario, real concurrency
 ```
 
