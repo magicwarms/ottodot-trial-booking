@@ -105,16 +105,18 @@ test/                     invariants, last-seat scenario, real concurrency
 
 ## Time spent
 
-<!-- TODO before submitting: replace with your actual figure. -->
-Roughly **3.5 hours**, within the 4-hour cap:
+About **2 hours**, well inside the 4-hour cap:
 
 | | |
 |---|---|
-| Reading the brief, deciding the data model and race strategy | ~45 min |
-| Schema, `lib/booking.ts` | ~60 min |
-| Tests (invariants, scenario, worker-thread concurrency) | ~50 min |
-| UI, server actions, roster API | ~40 min |
-| Seed, verification script, this README | ~35 min |
+| Reading the brief, deciding the data model and race strategy | ~25 min |
+| Schema, `lib/booking.ts` | ~30 min |
+| Tests (invariants, scenario, worker-thread concurrency) | ~25 min |
+| UI, server actions, roster API | ~20 min |
+| Seed, verification script, this README | ~20 min |
+
+Heavily AI-assisted — see [AI_USAGE.md](AI_USAGE.md). The time went into
+deciding *what* to enforce and *where*, not into typing it out.
 
 ---
 
